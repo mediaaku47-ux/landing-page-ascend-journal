@@ -1,0 +1,6 @@
+{
+  "name": "Ascend Journal",
+  "description": "Satu ruang tenang untuk kebiasaan, catatan suara, Kamera AI, dan Dompet Operasional harian Anda.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

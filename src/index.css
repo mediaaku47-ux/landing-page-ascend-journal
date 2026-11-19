@@ -1,0 +1,120 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #060b09;
+    color: #f4f6f5;
+    letter-spacing: 0.005em;
+  }
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.font-kpi {
+  font-family: 'Outfit', var(--font-sans);
+  font-variant-numeric: tabular-nums;
+}
+
+.font-brand {
+  font-family: 'Montserrat', var(--font-sans);
+}
+
+.font-display {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'opsz' 72;
+}
+
+.font-kicker {
+  font-family: 'Space Grotesk', var(--font-sans);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes cta-invite {
+    0%, 48%, 100% {
+      transform: translateY(0) rotate(0deg) scale(1);
+      box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.22);
+    }
+    56% {
+      transform: translateY(-2px) rotate(-1.3deg) scale(1.028);
+      box-shadow: 0 14px 30px -5px rgba(16, 185, 129, 0.42);
+    }
+    64% {
+      transform: translateY(-3px) rotate(1.3deg) scale(1.035);
+      box-shadow: 0 16px 32px -4px rgba(16, 185, 129, 0.48);
+    }
+    72% {
+      transform: translateY(-1px) rotate(-0.9deg) scale(1.02);
+    }
+    80% {
+      transform: translateY(-2px) rotate(0.7deg) scale(1.015);
+    }
+    88% {
+      transform: translateY(0) rotate(0deg) scale(1);
+      box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.22);
+    }
+  }
+
+  .animate-cta-invite {
+    animation: cta-invite 2.6s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+    will-change: transform;
+  }
+
+  .animate-cta-invite:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee-rtl {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  .animate-marquee-rtl {
+    animation: marquee-rtl 40s linear infinite;
+  }
+
+  .animate-marquee-slow {
+    animation: marquee-rtl 68s linear infinite;
+  }
+
+  .animate-marquee-rtl:hover,
+  .animate-marquee-slow:hover {
+    animation-play-state: paused;
+  }
+}
